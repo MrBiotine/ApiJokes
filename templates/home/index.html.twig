@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Day Joke{% endblock %}
+
+{% block body %}
+    <h1 class="w3-center"><span class="w3-badge w3-jumbo w3-red w3-padding">Dev Jokes</span></h1>
+<pre>
+    {# {{ dump(listJokes) }} #}
+</pre>
+<div class="w3-row w3-margin">
+{% for joke in listJokes.jokes %}
+    
+    <div class="w3-col m4 w3-panel">
+        <div class=" w3-padding w3-round-large w3-card-4">
+            <div class="w3-container w3-dark-gray">
+                <h6 class="">{{ joke.setup }}</h6>
+            </div>
+             <h6 class="w3-container w3-blue">{{ joke.delivery }}</h6>
+        </div>
+    </div>   
+    
+{% endfor %}
+</div>
+{% endblock %}
